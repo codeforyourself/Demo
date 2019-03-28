@@ -1,0 +1,5 @@
+- hosts: all
+  user: ansible
+  tasks:
+  - name: Create an empty file with name myfile.txt
+    shell: touch myfile.txt
