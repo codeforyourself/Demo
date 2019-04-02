@@ -13,11 +13,11 @@ node {
   stage('deploy') {
  
     // login Azure
-    withCredentials([azureServicePrincipal('credential id')]) {
+    withCredentials([azureServicePrincipal('b16ef227-c63e-4ecb-add4-391b2407dd33')]) {
       sh '''
         az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
         az account set -s $AZURE_SUBSCRIPTION_ID
-	      sh 'script file name'
+	      sh CreateVm.sh
       '''
     }
    
